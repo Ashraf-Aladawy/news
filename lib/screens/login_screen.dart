@@ -61,9 +61,6 @@ class LoginScreen extends StatelessWidget {
                             if (value == null || value.isEmpty) {
                               return "Password required";
                             }
-                            if (passwordController.text.length < 6) {
-                              return "Password must be more than 6 character";
-                            }
                             return null;
                           },
                           onSearch: (v) {},
