@@ -9,14 +9,18 @@ class LightTheme {
       primaryColor: backgroundColor,
       unselectedWidgetColor: textColor,
       appBarTheme: AppBarTheme(
-          centerTitle: true,
-          color: backgroundColor,
-          titleTextStyle: TextStyle(
-              color: textColor, fontSize: 20, fontWeight: FontWeight.w500),
+        centerTitle: true,
+        color: backgroundColor,
+        titleTextStyle: TextStyle(
+            color: textColor, fontSize: 20, fontWeight: FontWeight.w500),
       ),
       textTheme: TextTheme(
           titleSmall: TextStyle(
               color: textColor, fontSize: 16, fontWeight: FontWeight.w700),
           titleMedium: TextStyle(
+              color: backgroundColor,
+              fontSize: 16,
+              fontWeight: FontWeight.w700),
+          titleLarge: TextStyle(
               color: textColor, fontSize: 24, fontWeight: FontWeight.w500)));
 }
