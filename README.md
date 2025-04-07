@@ -44,12 +44,42 @@ appealing format.
 
 # APi Key setup
 
--This app uses a news API (NewsAPI.org). 
+-This app uses a news API (NewsAPI.org).
 
+# Implementation approach
 
+ *State Management:* I used BLoC (Cubit) for state management, enabling a clear separation between business logic and UI. 
+   Each feature ( News fetching, Search) has its own Cubit to manage states in a predictable and scalable way.
 
+ *Firebase Authentication:* Integrated Firebase Auth for user registration and login using Email/Password and Login with Google. 
 
+ *Integrate API:* News data is retrieved from a public REST API using the http package. Data is parsed into model classes to ensure structured handling
 
+# Modular Structure
 
-
+ lib/
+     -bloc/                      
+         -Cubit.dart              # Contains Cubit class that handles state changes
+         -states.dart             # Defines various states for the Cubit
+     -firebase_manger/          
+         -firebase_auth.dart      # Handles Firebase authentication logic
+     -items/   
+         -drawer_item.dart        # Data models for API responses
+         -news_item.dart          # Widget to display individual news article
+         -text_field_item.dart    # Reusable styled text field
+     -models/
+         -news_data_model.dart         # Model for news articles
+         -source_response_model.dart   # Model for news sources
+     -screens/                        # All screens grouped by feature
+         -categories_section.dart
+         -home_screen.dart
+         -login_screen.dart
+         -news_details_screen.dart
+         -register_screen.dart
+         -search_screen.dart
+         -source_section.dart
+     -theme/
+         -light_theme.dart              # Defines light mode theme styling
+     -firebase_options.dart            # Auto-generated Firebase options file
+     -main.dart                  # Entry point of the application
 
